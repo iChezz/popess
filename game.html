@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bermain RPS Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="game-id-box">
+                Game ID: <strong id="gameId">Loading...</strong>
+                <button id="copyId" class="btn-small">📋 Copy</button>
+            </div>
+            <button id="leaveGame" class="btn-small btn-danger">Keluar</button>
+        </div>
+        
+        <div class="players-container">
+            <div class="player-card player1">
+                <div class="player-avatar">👤</div>
+                <div class="player-name" id="player1Name">Menunggu pemain...</div>
+                <div class="player-status" id="player1Status">Belum siap</div>
+                <div class="player-choice" id="player1Choice">❓</div>
+                <div class="player-score" id="player1Score">0</div>
+            </div>
+            
+            <div class="vs">VS</div>
+            
+            <div class="player-card player2">
+                <div class="player-avatar">🤖</div>
+                <div class="player-name" id="player2Name">Menunggu pemain...</div>
+                <div class="player-status" id="player2Status">Belum siap</div>
+                <div class="player-choice" id="player2Choice">❓</div>
+                <div class="player-score" id="player2Score">0</div>
+            </div>
+        </div>
+        
+        <div class="game-controls">
+            <h3>Pilih gerakanmu:</h3>
+            <div class="choices">
+                <button class="choice-btn" data-choice="rock">
+                    ✊ Batu
+                </button>
+                <button class="choice-btn" data-choice="paper">
+                    📄 Kertas
+                </button>
+                <button class="choice-btn" data-choice="scissors">
+                    ✂️ Gunting
+                </button>
+            </div>
+        </div>
+        
+        <div class="result-area">
+            <div id="gameResult" class="result-message"></div>
+            <div id="waitingMessage" class="waiting-message">Menunggu pemain lain...</div>
+        </div>
+        
+        <div class="history">
+            <h4>Riwayat:</h4>
+            <div id="historyList"></div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script src="game-script.js"></script>
+</body>
+</html>
