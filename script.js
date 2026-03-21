@@ -13,6 +13,7 @@ function initPeer() {
     peer.on('open', (id) => {
         console.log('Peer ID:', id);
         localStorage.setItem('peerId', id);
+        alert(id);
     });
     
     peer.on('error', (err) => {
